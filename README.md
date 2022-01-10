@@ -11,7 +11,7 @@ I have done nothing malicious to this file, only the bare minimum code changes I
 * Short-circuited the `appendTrackWithLoudness` method (defined at line 25368 in this file) so that it simply usese the plain `appendTrack` method defined above it. Plexamp was hanging for me on many attempts to connect certain tracks, and this method was generating the the error in the logs, saying the "addidwithloudness" command was unrecognized. This means that Plexamp's track loudness smoothing features are disabled on this player, presumably, but that was the simplest means of getting around the issue that I could find. Possibly the issue has to with bugs introduced by the file's prettification but I don't know.
 
 ## Instructions
-1. Get a working server.json file. Canonical instructions say to used an old Plexamp v1 or v2 installation to generate this, but it only worked partially for me. The file I got from that had only the `player` and `user` info defined in the JSON, but a third `server` object is required (I believe; correct me if it's not). Your final version should look like this:  
+1. Get a working server.json file. Canonical instructions say to use an old Plexamp v1 or v2 installation to generate this, but it only worked partially for me. The file I got from that had only the `player` and `user` info defined in the JSON, but a third `server` object is required (I believe; correct me if it's not). Your final version should look like this:  
  ```
 {
   "player": {
