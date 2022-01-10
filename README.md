@@ -24,11 +24,11 @@ I have done nothing malicious to this file, only the bare minimum code changes I
   },
   "server": {
     "identifier": "XXXXXXXXXXXXXXXXXX",
-    "library": "/library/sections/X"
+    "library": "/library/sections/XX"
   }
 }
  ```  
- Again, the player and user sections should come through just fine. Server I had to create by hand. To get your server identifier, get an X-Plex-Token (instructions available via Google) and use it to visit the root address of your Plex server, likely at `http://YOUR_SERVER_IP:32400/?X-Plex-Token=XXXXXXXXXXXXXXXX`. Your server id will be contained in the `machineIdentifier` attribute of the top-level `MediaContainer` tag in the XML that you encounter. To get the library info, you need to use the same token to visit `http://YOUR_SERVER_IP:32400/library/sections?X-Plex-Token=XXXXXXXXXXXXXXXX`. There find the `key` integer value within any `Directory` tags living in the tree under the `MediaContainer` tag. Replace the X at the end of `"/libaray/sections/X"` string in the above example with this value. I have not tested how to deal with multiple libraries on the server yet, but I'm hopeful that simply making a list of library sections will work. Will update when I have more info.  
+ Again, the player and user sections should come through just fine. Server I had to create by hand. To get your server identifier, get an X-Plex-Token (instructions available via Google) and use it to visit the root address of your Plex server, likely at `http://YOUR_SERVER_IP:32400/?X-Plex-Token=XXXXXXXXXXXXXXXX`. Your server id will be contained in the `machineIdentifier` attribute of the top-level `MediaContainer` tag in the XML that you encounter. To get the library info, you need to use the same token to visit `http://YOUR_SERVER_IP:32400/library/sections?X-Plex-Token=XXXXXXXXXXXXXXXX`. There find the `key` integer value within any `Directory` tags living in the tree under the `MediaContainer` tag. Replace the XX at the end of `"/libaray/sections/XX"` string in the above example with this value (fill single-digit values with a leading zero as in 02). I have not tested how to deal with multiple libraries on the server yet, but I'm hopeful that simply making a list of library sections will work. Will update when I have more info.  
  
  Once you have added the server definition to your server.json, save it in the same spot the canonical instructions indicate on your RPi.
 
