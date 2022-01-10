@@ -12,7 +12,7 @@ I have done nothing malicious to this file, only the bare minimum code changes I
 
 ## Instructions
 1. Get a working server.json file. Canonical instructions say to used an old Plexamp v1 or v2 installation to generate this, but it only worked partially for me. The file I got from that had only the `player` and `user` info defined in the JSON, but a third `server` object is required (I believe; correct me if it's not). Your final version should look like this:  
-```{
+ ```{
   "player": {
     "name": "YOUR_SERVER_NAME",
     "identifier": "XXXXXXXXXXXXXXXXXX"
@@ -26,8 +26,9 @@ I have done nothing malicious to this file, only the bare minimum code changes I
     "library": "/library/sections/X"
   }
 }
-```  
+ ```  
  Again, the player and user sections should come through just fine. Server I had to create by hand. To get your server identifier, get an X-Plex-Token (instructions available via Google) and use it to visit the root address of your Plex server, likely at `http://YOUR_SERVER_IP:32400/?X-Plex-Token=XXXXXXXXXXXXXXXX`. Your server id will be contained in the `machineIdentifier` attribute of the top-level `MediaContainer` tag in the XML that you encounter. To get the library info, you need to use the same token to visit `http://YOUR_SERVER_IP:32400/library/sections?X-Plex-Token=XXXXXXXXXXXXXXXX`. There find the `key` integer value within any `Directory` tags living in the tree under the `MediaContainer` tag. Replace the X at the end of `"/libaray/sections/X"` string in the above example with this value. I have not tested how to deal with multiple libraries on the server yet, but I'm hopeful that simply making a list of library sections will work. Will update when I have more info.  
+ 
  Once you have added the server definition to your server.json, save it in the same spot the canonical instructions indicate on your RPi.
 
 2. Download or copy and paste the contents of the server.prod.js file in this repo to your RPi. Your existing server.prod.js should be in ~/plexamp/server/. I would recommend renaming it to server.prod.js.old and then replacing it with the new file you've created.
