@@ -1,6 +1,6 @@
 # rpi_plexamp_hack
 
-This repo offers a modified version of the server.prod.js beta code distributed by Plex. I have made a few changes to get the code to work with current Plex infrastructure, but, NB: 1) there may well be other existing bugs in the code that I have not encountered, and 2) new buys may appear at any time. So no guarantees.
+This repo offers a modified version of the server.prod.js beta code distributed by Plex. I have made a few changes to get the code to work with current Plex infrastructure, but, NB: 1) there may well be other existing bugs in the code that I have not encountered, and 2) new bugs may appear at any time. So no guarantees.
 
 I have done nothing malicious to this file, only the bare minimum code changes I could identify that were required to get it running reliably. However, the file is 85K lines long as prettified automatically by my code editor (JsFormat package in Sublime Text 3 is what I used), so you'll probably have to take my word on that. Up to you.
 
