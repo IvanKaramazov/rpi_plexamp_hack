@@ -36,5 +36,5 @@ I have done nothing malicious to this file, only the bare minimum code changes I
 3. Get your server's hostname and place it in line 2 of the file, in the `plex_server_hostname` definition. To find this, visit your server's web interface, find any track and hit "Get Info" on its three-dot menu, then click "View XML" in the box that pops up. You will visit a URL like this: `https://192-168-1-X.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.plex.direct:32400/library/metadata/22765?checkFiles=1&many_other_variables=blahblahblah`. We care about the protocol and hostname and port here, nothing else, i.e. everything up through the port definition at ":32400". Copy that; do not copy anything starting with "library". Paste this in place of the similar string in line 2 of the server.prod.js file you're creating. No trailing slash after the port, please.
 4. [OPTIONAL] Figure out what address your RPi's MPD instance is listening on and set that in line 4 of this file, in the `mpd_ip_address` definition. I've left the default of "127.0.0.1" in place, but on my machine I had to update it to "localhost", which worked fine.
 5. Save the file; make sure this version is in the right place and has replaced the old file distributed by Plex.
-6. `sudo systemtctl restart plexamp`
+6. `sudo systemctl restart plexamp`
 7. If it doesn't work for you, please reach out and let me know.
