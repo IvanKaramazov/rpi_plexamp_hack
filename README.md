@@ -12,7 +12,8 @@ I have done nothing malicious to this file, only the bare minimum code changes I
 
 ## Instructions
 1. Get a working server.json file. Canonical instructions say to used an old Plexamp v1 or v2 installation to generate this, but it only worked partially for me. The file I got from that had only the `player` and `user` info defined in the JSON, but a third `server` object is required (I believe; correct me if it's not). Your final version should look like this:  
- ```{
+ ```
+{
   "player": {
     "name": "YOUR_SERVER_NAME",
     "identifier": "XXXXXXXXXXXXXXXXXX"
